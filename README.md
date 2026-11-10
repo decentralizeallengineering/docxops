@@ -27,6 +27,34 @@ Operations that change the file write it back to `path`. Pass `out` to write a n
 instead. Saves are atomic: the file is written to a temp file, which then replaces the
 target.
 
+## Try it
+
+```console
+$ pip install git+https://github.com/decentralizeallengineering/docxops
+```
+
+```python
+import docx, docxops
+
+d = docx.Document()
+for text, level in [("Scope", 1), ("Method", 1), ("Sampling", 2)]:
+    d.add_heading(text, level)
+d.save("report.docx")
+
+r = docxops.add_toc("report.docx")
+print(r["ok"], [(e["level"], e["text"]) for e in r["details"]["entries"]])
+print(r["details"]["field_code"])
+```
+
+Output:
+
+```text
+True [(1, 'Scope'), (1, 'Method'), (2, 'Sampling')]
+TOC \o "1-3" \h \z \u
+```
+
+The TOC is a real Word field with clickable entries; Word fills in page numbers on open.
+
 ## Operations
 
 | name | what it does |
