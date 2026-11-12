@@ -15,7 +15,7 @@ from .tables import add_table, table_from_csv
 from .text import replace_text
 from .toc import add_toc
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 def call(name: str, args: dict | None = None) -> dict:
