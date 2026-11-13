@@ -146,3 +146,10 @@ pytest
 
 The tests create their own fixtures with python-docx. Licensed under Apache-2.0 (see
 `LICENSE`).
+
+## Related
+
+- [xlsxops](https://github.com/decentralizeallengineering/xlsxops): the same report and schema style for Excel files
+- [pdfops](https://github.com/decentralizeallengineering/pdfops): the same for PDF
+- [officecheck](https://github.com/decentralizeallengineering/officecheck): grade the files an agent wrote against a JSON spec
+- [all tools](https://github.com/decentralizeallengineering): the index of this account
